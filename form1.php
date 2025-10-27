@@ -8,7 +8,7 @@
 <style>
   table {
     border-collapse: collapse;
-    margin: 40px auto;
+    margin: 20px auto;
   }
   td {
     border: 1px solid #ccc;
@@ -17,7 +17,7 @@
     position: relative;
   }
   select {
-    width: 100px;
+    width: 60px;
   }
   /* SVG overlay on top of the table */
   #arrowLayer {
@@ -197,12 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function drawArrow(fromEl, toEl) {
-    const rect".($x+1)." = fromEl.getBoundingClientRect();
+    const rect1 = fromEl.getBoundingClientRect();
     const rect2 = toEl.getBoundingClientRect();
     const containerRect = document.getElementById('tableContainer').getBoundingClientRect();
 
-    const x1 = rect".($x+1).".left + rect".($x+1).".width / 2 - containerRect.left;
-    const y1 = rect".($x+1).".top + rect".($x+1).".height / 2 - containerRect.top;
+    const x1 = rect1.left + rect1.width / 2 - containerRect.left;
+    const y1 = rect1.top + rect1.height / 2 - containerRect.top;
     const x2 = rect2.left + rect2.width / 2 - containerRect.left;
     const y2 = rect2.top + rect2.height / 2 - containerRect.top;
 
