@@ -12,7 +12,7 @@
   }
   td {
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     position: relative;
   }
@@ -188,9 +188,23 @@ document.addEventListener('DOMContentLoaded', () => {
       // Redraw all connections
       selects.forEach(s => {
         if (s.value) {
-          const fromCell = s.closest('td');
-          const toCell = document.getElementById(s.value);
-          if (toCell) drawArrow(fromCell, toCell);
+		  selectTD = s.closest('td');
+		  destTD = document.getElementById(s.value);
+
+		  if (destTD) {
+		  		if (Number(selectTD.id) < (Number(destTD.id)-10)) {
+			  		for (let i = 0; i < 6; i++) {
+						selectTD = selectTD.nextElementSibling;
+		  			}				
+		  		} else {
+					for (let i = 0; i < 6; i++) {
+						destTD = destTD.nextElementSibling;
+					}
+		  		} 
+		  		const fromCell = selectTD;
+          		const toCell = destTD;
+          		if (toCell) drawArrow(fromCell, toCell);
+		  }
         }
       });
     });
