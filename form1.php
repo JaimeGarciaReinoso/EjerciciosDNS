@@ -45,32 +45,36 @@
 		<th class="top-header" colspan="7">Auth. DNS</th>
 	</tr>
 	<tr>
-		<th colspan="1">Dest.</th>
+		<th colspan="1">IP</th>
+		<th colspan="6">DNS</th>
+	</tr>
+	<tr>
+		<th colspan="1">IPdest</th>
 		<th colspan="1">Flags</th>
 		<th colspan="2">Queries</th>
 		<th colspan="3">Answers</th>
 		<td></td>
-		<th colspan="1">Dest.</th>
+		<th colspan="1">IPdest</th>
 		<th colspan="1">Flags</th>
 		<th colspan="2">Queries</th>
 		<th colspan="3">Answers</th>
 		<td></td>
-		<th colspan="1">Dest.</th>
+		<th colspan="1">IPdest</th>
 		<th colspan="1">Flags</th>
 		<th colspan="2">Queries</th>
 		<th colspan="3">Answers</th>
 		<td></td>
-		<th colspan="1">Dest.</th>
+		<th colspan="1">IPdest</th>
 		<th colspan="1">Flags</th>
 		<th colspan="2">Queries</th>
 		<th colspan="3">Answers</th>
 		<td></td>
-		<th colspan="1">Dest.</th>
+		<th colspan="1">IPdest</th>
 		<th colspan="1">Flags</th>
 		<th colspan="2">Queries</th>
 		<th colspan="3">Answers</th>
 	<tr>
-		<th class="bottom-header">Dest.</th>
+		<th class="bottom-header">IPdest</th>
 		<th class="bottom-header">Resp.</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
@@ -78,7 +82,7 @@
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Address</th>
 		<td></td>
-		<th class="bottom-header">Dest.</th>
+		<th class="bottom-header">IPdest</th>
 		<th class="bottom-header">Resp.</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
@@ -86,7 +90,7 @@
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Address</th>
 		<td></td>
-		<th class="bottom-header">Dest.</th>
+		<th class="bottom-header">IPdest</th>
 		<th class="bottom-header">Resp.</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
@@ -94,7 +98,7 @@
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Address</th>
 		<td></td>
-		<th class="bottom-header">Dest.</th>
+		<th class="bottom-header">IPdest</th>
 		<th class="bottom-header">Resp.</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
@@ -102,7 +106,7 @@
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Address</th>
 		<td></td>
-		<th class="bottom-header">Dest.</th>
+		<th class="bottom-header">IPdest</th>
 		<th class="bottom-header">Resp.</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
@@ -123,37 +127,37 @@
 		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
 		<td class=\"ticktemplate\"></td>
-		<td id=\"".($x*10+2)."\"><select name=\"l1-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+1)."\">Client</option><option value=\"".(($x+1)*10+3)."\">Root</option><option value=\"".(($x+1)*10+4)."\">TLD</option><option value=\"".(($x+1)*10+5)."\">Auth.</option></td>
-		<td><input type=\"text\" side=\"local\" name=\"l1-resp\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l1-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l1-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l1-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l1-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l1-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*10+2)."\"><select name=\"l".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+1)."\">Client</option><option value=\"".(($x+1)*10+3)."\">Root</option><option value=\"".(($x+1)*10+4)."\">TLD</option><option value=\"".(($x+1)*10+5)."\">Auth.</option></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-resp\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
 		<td class=\"ticktemplate\"></td>
-		<td id=\"".($x*10+3)."\"><select name=\"r1-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+1)."\">Client</option><option value=\"".(($x+1)*10+2)."\">Local</option><option value=\"".(($x+1)*10+4)."\">TLD</option><option value=\"".(($x+1)*10+5)."\">Auth.</option></td>
-		<td><input type=\"text\" side=\"root\" name=\"r1-resp\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r1-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r1-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r1-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r1-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r1-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*10+3)."\"><select name=\"r".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+1)."\">Client</option><option value=\"".(($x+1)*10+2)."\">Local</option><option value=\"".(($x+1)*10+4)."\">TLD</option><option value=\"".(($x+1)*10+5)."\">Auth.</option></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-resp\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
 		<td class=\"ticktemplate\"></td>
-		<td id=\"".($x*10+4)."\"><select name=\"t1-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+1)."\">Client</option><option value=\"".(($x+1)*10+2)."\">Local</option><option value=\"".(($x+1)*10+3)."\">Root</option><option value=\"".(($x+1)*10+5)."\">Auth.</option></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t1-resp\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t1-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t1-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t1-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t1-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t1-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*10+4)."\"><select name=\"t".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+1)."\">Client</option><option value=\"".(($x+1)*10+2)."\">Local</option><option value=\"".(($x+1)*10+3)."\">Root</option><option value=\"".(($x+1)*10+5)."\">Auth.</option></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-resp\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
 		<td class=\"ticktemplate\"></td>
-		<td id=\"".($x*10+5)."\"><select name=\"a1-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+1)."\">Client</option><option value=\"".(($x+1)*10+2)."\">Local</option><option value=\"".(($x+1)*10+3)."\">Root</option><option value=\"".(($x+1)*10+4)."\">TLD</option></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a1-resp\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a1-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a1-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a1-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a1-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a1-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*10+5)."\"><select name=\"a".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+1)."\">Client</option><option value=\"".(($x+1)*10+2)."\">Local</option><option value=\"".(($x+1)*10+3)."\">Root</option><option value=\"".(($x+1)*10+4)."\">TLD</option></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-resp\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
 	</tr>
 ";
 																	}
@@ -193,12 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function drawArrow(fromEl, toEl) {
-    const rect1 = fromEl.getBoundingClientRect();
+    const rect".($x+1)." = fromEl.getBoundingClientRect();
     const rect2 = toEl.getBoundingClientRect();
     const containerRect = document.getElementById('tableContainer').getBoundingClientRect();
 
-    const x1 = rect1.left + rect1.width / 2 - containerRect.left;
-    const y1 = rect1.top + rect1.height / 2 - containerRect.top;
+    const x1 = rect".($x+1).".left + rect".($x+1).".width / 2 - containerRect.left;
+    const y1 = rect".($x+1).".top + rect".($x+1).".height / 2 - containerRect.top;
     const x2 = rect2.left + rect2.width / 2 - containerRect.left;
     const y2 = rect2.top + rect2.height / 2 - containerRect.top;
 
