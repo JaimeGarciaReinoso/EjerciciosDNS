@@ -7,7 +7,7 @@
 <title>Dynamic Arrows Between Selects</title>
 <style>
   table {
-    border-collapse: collapse;
+    border-collapse: separate;
     margin: 20px auto;
   }
   td {
@@ -26,6 +26,56 @@
     left: 0;
     pointer-events: none;
   }
+
+.ticktemplate {
+    width: 200px;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+}
+
+.top-header {
+    background-color: #339933;
+    padding: 6px;
+    border: 0px;
+    border-radius: 6px 6px 0 0;
+    text-transform: capitalize;
+}
+
+.ip-dns-header {
+    background-color: #40bf40;
+    padding: 6px;
+    border: 2px;
+    box-sizing: border-box;
+    border-radius: 0;
+    text-transform: capitalize;
+    font-weight: 550;
+    font-size: 14px;
+}
+
+.content-header {
+    background-color: #66cc66;
+    padding: 6px;
+    border: 0px;
+    box-sizing: border-box;
+    border-radius: 0;
+    text-transform: capitalize;
+    font-weight: 550;
+    font-size: 14px;
+}
+
+
+.bottom-header {
+    background-color: #8cd98c;
+    padding: 6px;
+    border: 0px;
+    box-sizing: border-box;
+    border-radius: 0;
+    text-transform: capitalize;
+    font-weight: 550;
+    font-size: 14px;
+}
+
+
 </style>
 </head>
 <body>
@@ -45,34 +95,47 @@
 		<th class="top-header" colspan="7">Auth. DNS</th>
 	</tr>
 	<tr>
-		<th colspan="1">IP</th>
-		<th colspan="6">DNS</th>
+		<th class="ip-dns-header" colspan="1">IP</th>
+		<th  class="ip-dns-header" colspan="6">DNS</th>
+		<td></td>
+		<th  class="ip-dns-header" colspan="1">IP</th>
+		<th  class="ip-dns-header" colspan="6">DNS</th>
+		<td></td>
+		<th  class="ip-dns-header" colspan="1">IP</th>
+		<th  class="ip-dns-header" colspan="6">DNS</th>
+		<td></td>
+		<th  class="ip-dns-header" colspan="1">IP</th>
+		<th  class="ip-dns-header" colspan="6">DNS</th>
+		<td></td>
+		<th  class="ip-dns-header" colspan="1">IP</th>
+		<th  class="ip-dns-header" colspan="6">DNS</th>
+		<td></td>
 	</tr>
 	<tr>
-		<th colspan="1">IPdest</th>
-		<th colspan="1">Flags</th>
-		<th colspan="2">Queries</th>
-		<th colspan="3">Answers</th>
+		<th class="content-header" colspan="1">IPdest</th>
+		<th class="content-header" colspan="1">Flags</th>
+		<th class="content-header" colspan="2">Queries</th>
+		<th class="content-header"  colspan="3">Answers</th>
 		<td></td>
-		<th colspan="1">IPdest</th>
-		<th colspan="1">Flags</th>
-		<th colspan="2">Queries</th>
-		<th colspan="3">Answers</th>
+		<th class="content-header"  colspan="1">IPdest</th>
+		<th class="content-header"  colspan="1">Flags</th>
+		<th class="content-header"  colspan="2">Queries</th>
+		<th class="content-header" colspan="3">Answers</th>
 		<td></td>
-		<th colspan="1">IPdest</th>
-		<th colspan="1">Flags</th>
-		<th colspan="2">Queries</th>
-		<th colspan="3">Answers</th>
+		<th class="content-header"  colspan="1">IPdest</th>
+		<th class="content-header"  colspan="1">Flags</th>
+		<th class="content-header" colspan="2">Queries</th>
+		<th class="content-header" colspan="3">Answers</th>
 		<td></td>
-		<th colspan="1">IPdest</th>
-		<th colspan="1">Flags</th>
-		<th colspan="2">Queries</th>
-		<th colspan="3">Answers</th>
+		<th class="content-header" colspan="1">IPdest</th>
+		<th class="content-header" colspan="1">Flags</th>
+		<th class="content-header" colspan="2">Queries</th>
+		<th class="content-header" colspan="3">Answers</th>
 		<td></td>
-		<th colspan="1">IPdest</th>
-		<th colspan="1">Flags</th>
-		<th colspan="2">Queries</th>
-		<th colspan="3">Answers</th>
+		<th class="content-header" colspan="1">IPdest</th>
+		<th class="content-header" colspan="1">Flags</th>
+		<th class="content-header" colspan="2">Queries</th>
+		<th class="content-header" colspan="3">Answers</th>
 	<tr>
 		<th class="bottom-header">IPdest</th>
 		<th class="bottom-header">Resp.</th>
