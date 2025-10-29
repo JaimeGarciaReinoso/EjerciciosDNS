@@ -84,59 +84,63 @@
 	<p> Un cliente DNS desea obtener la dirección IP del equipo www.uah.es (IPwww). Se sabe que el DNS local sólo tiene la dirección IP de un servidor DNS raíz (IPr), que este sólo tiene las direcciones IP de servidores TLD (entre ellas la IPes del servidor DNS con nombre .es) y que el servidor DNS de Espanha tiene la IP del servidor DNS autorizado de la UAH (la IPuah cuyo nombre es AuthUAH.es). Represente el diagrama de intercambio de mensajes de DNS</p>
 
 <div id="tableContainer" style="position: relative; display: inline-block;">
+
+
+<form action="check.php" method="POST">
+	<input type="hidden" id="ExerciseID" name="ExerciseID" value="1">
   <table id="formTable">
 
 	<tr>
-		<th class="top-header" colspan="9">Client</th>
+		<th class="top-header" colspan="10">Client</th>
 		<td></td>
-		<th class="top-header" colspan="9">Local DNS</th>
+		<th class="top-header" colspan="10">Local DNS</th>
 		<td></td>
-		<th class="top-header" colspan="9">Root DNS</th>
+		<th class="top-header" colspan="10">Root DNS</th>
 		<td></td>
-		<th class="top-header" colspan="9">TLD DNS</th>
+		<th class="top-header" colspan="10">TLD DNS</th>
 		<td></td>
-		<th class="top-header" colspan="9">Auth. DNS</th>
+		<th class="top-header" colspan="10">Auth. DNS</th>
 	</tr>
 	<tr>
 		<th class="ip-dns-header" colspan="1">IP</th>
-		<th  class="ip-dns-header" colspan="8">DNS</th>
+		<th  class="ip-dns-header" colspan="9">DNS</th>
 		<td></td>
 		<th  class="ip-dns-header" colspan="1">IP</th>
-		<th  class="ip-dns-header" colspan="8">DNS</th>
+		<th  class="ip-dns-header" colspan="9">DNS</th>
 		<td></td>
 		<th  class="ip-dns-header" colspan="1">IP</th>
-		<th  class="ip-dns-header" colspan="8">DNS</th>
+		<th  class="ip-dns-header" colspan="9">DNS</th>
 		<td></td>
 		<th  class="ip-dns-header" colspan="1">IP</th>
-		<th  class="ip-dns-header" colspan="8">DNS</th>
+		<th  class="ip-dns-header" colspan="9">DNS</th>
 		<td></td>
 		<th  class="ip-dns-header" colspan="1">IP</th>
-		<th  class="ip-dns-header" colspan="8">DNS</th>
+		<th  class="ip-dns-header" colspan="9">DNS</th>
 		<td></td>
 	</tr>
 	<tr>
 		<th class="content-header" colspan="1">IPdest</th>
-		<th class="content-header" colspan="3">Flags</th>
+		<th class="content-header" colspan="4">Flags</th>
 		<th class="content-header" colspan="2">Queries</th>
 		<th class="content-header"  colspan="3">Answers</th>
 		<td></td>
 		<th class="content-header"  colspan="1">IPdest</th>
-		<th class="content-header"  colspan="3">Flags</th>
+		<th class="content-header"  colspan="4">Flags</th>
 		<th class="content-header"  colspan="2">Queries</th>
 		<th class="content-header" colspan="3">Answers</th>
 		<td></td>
 		<th class="content-header"  colspan="1">IPdest</th>
-		<th class="content-header"  colspan="3">Flags</th>
+		<th class="content-header"  colspan="4">Flags</th>
 		<th class="content-header" colspan="2">Queries</th>
 		<th class="content-header" colspan="3">Answers</th>
 		<td></td>
 		<th class="content-header" colspan="1">IPdest</th>
-		<th class="content-header" colspan="3">Flags</th>
+		<th class="content-header" colspan="4">Flags</th>
 		<th class="content-header" colspan="2">Queries</th>
 		<th class="content-header" colspan="3">Answers</th>
 		<td></td>
 		<th class="content-header" colspan="1">IPdest</th>
-		<th class="content-header" colspan="3">Flags</th>
+		<th class="content-header" colspan="4">Flags</th>
 		<th class="content-header" colspan="2">Queries</th>
 		<th class="content-header" colspan="3">Answers</th>
 	<tr>
@@ -144,6 +148,7 @@
 		<th class="bottom-header">QR</th>
 		<th class="bottom-header">RD</th>
 		<th class="bottom-header">RA</th>
+		<th class="bottom-header">AA</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Name</th>
@@ -154,6 +159,7 @@
 		<th class="bottom-header">QR</th>
 		<th class="bottom-header">RD</th>
 		<th class="bottom-header">RA</th>
+		<th class="bottom-header">AA</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Name</th>
@@ -164,6 +170,7 @@
 		<th class="bottom-header">QR</th>
 		<th class="bottom-header">RD</th>
 		<th class="bottom-header">RA</th>
+		<th class="bottom-header">AA</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Name</th>
@@ -174,6 +181,7 @@
 		<th class="bottom-header">QR</th>
 		<th class="bottom-header">RD</th>
 		<th class="bottom-header">RA</th>
+		<th class="bottom-header">AA</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Name</th>
@@ -184,6 +192,7 @@
 		<th class="bottom-header">QR</th>
 		<th class="bottom-header">RD</th>
 		<th class="bottom-header">RA</th>
+		<th class="bottom-header">AA</th>
 		<th class="bottom-header">Name</th>
 		<th class="bottom-header">Type</th>
 		<th class="bottom-header">Name</th>
@@ -192,13 +201,14 @@
 	</tr>
 
 <?php
-	for ($x=0;$x<=10;$x++) {
+	for ($x=0;$x<=14;$x++) {
 			echo "
 	<tr>
 		<td id=\"".($x*10+1)."\"><select name=\"c".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*10+2)."\">Local</option><option value=\"".(($x+1)*10+3)."\">Root</option><option value=\"".(($x+1)*10+4)."\">TLD</option><option value=\"".(($x+1)*10+5)."\">Auth.</option></td>
 		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-rd\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-ra\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-aa\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
@@ -209,6 +219,7 @@
 		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-rd\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-ra\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-aa\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
@@ -219,6 +230,7 @@
 		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-rd\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-ra\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-aa\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
@@ -229,6 +241,7 @@
 		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-rd\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-ra\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-aa\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
@@ -239,6 +252,7 @@
 		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-rd\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-ra\" size=\"1\" value=\"NULL\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-aa\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
 		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
@@ -248,8 +262,9 @@
 ";
 																	}
 ?>
-
+  <input type="submit">
   </table>
+</form>
 
   <!-- SVG overlay for drawing arrows -->
   <svg id="arrowLayer" width="100%" height="100%">
@@ -279,11 +294,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		  if (destTD) {
 		  		if (Number(selectTD.id) < (Number(destTD.id)-10)) {
-			  		for (let i = 0; i < 9; i++) {
+			  		for (let i = 0; i < 10; i++) {
 						selectTD = selectTD.nextElementSibling;
 		  			}				
 		  		} else {
-					for (let i = 0; i < 9; i++) {
+					for (let i = 0; i < 10; i++) {
 						destTD = destTD.nextElementSibling;
 					}
 		  		} 
