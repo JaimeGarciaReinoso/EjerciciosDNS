@@ -1,12 +1,8 @@
 <html>
 	<head>
-		<style>
-			table, th {
-			border: 1px solid black;
-		}
-		</style>
-		<link rel="stylesheet" href="style.css">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Comprobación de ejercicio</title>
+		<link rel="stylesheet" href="style.css">
 	</head>
 <body>
 <?php
