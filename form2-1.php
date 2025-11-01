@@ -4,90 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dynamic Arrows Between Selects</title>
-<style>
-  table {
-    border-collapse: separate;
-    margin: 20px auto;
-  }
-  td {
-    border: 1px solid #ccc;
-    padding: 5px;
-    text-align: center;
-    position: relative;
-  }
-  select {
-    width: 60px;
-  }
-  /* SVG overlay on top of the table */
-  #arrowLayer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-  }
-
-.ticktemplate {
-    width: 200px;
-    border-top: 1px dashed black;
-    border-bottom: 1px dashed black;
-}
-
-.top-header {
-    background-color: #339933;
-    padding: 6px;
-    border: 0px;
-    border-radius: 6px 6px 0 0;
-    text-transform: capitalize;
-}
-
-.ip-dns-header {
-    background-color: #40bf40;
-    padding: 6px;
-    border: 2px;
-    box-sizing: border-box;
-    border-radius: 0;
-    text-transform: capitalize;
-    font-weight: 550;
-    font-size: 14px;
-}
-
-.content-header {
-    background-color: #66cc66;
-    padding: 6px;
-    border: 0px;
-    box-sizing: border-box;
-    border-radius: 0;
-    text-transform: capitalize;
-    font-weight: 550;
-    font-size: 14px;
-}
-
-
-.bottom-header {
-    background-color: #8cd98c;
-    padding: 6px;
-    border: 0px;
-    box-sizing: border-box;
-    border-radius: 0;
-    text-transform: capitalize;
-    font-weight: 550;
-    font-size: 14px;
-}
-
-
-</style>
+<title>Ejercicio DNS 1 - Parte 1</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 	<p> Ejercicio 1 - Parte 1 </p>
-	<p> Un cliente DNS desea obtener la dirección IP del equipo www.uah.es (IPwww). Se sabe que el DNS local sólo tiene la dirección IP de un servidor DNS raíz (IPr), que este sólo tiene las direcciones IP de servidores TLD (entre ellas la IPes del servidor DNS con nombre .es) y que el servidor DNS de Espanha tiene la IP del servidor DNS autorizado de la UAH (la IPuah cuyo nombre es AuthUAH.es). Represente el diagrama de intercambio de mensajes de DNS</p>
+	<p> Un cliente DNS desea obtener la dirección IP del equipo www.uah.es (IPwww). Se sabe que el DNS local sólo tiene la dirección IP de un servidor DNS raíz (IPr), que este sólo tiene las direcciones IP de servidores TLD (entre ellas la IPes del servidor DNS con nombre .es) y que el servidor DNS de España tiene la IP del servidor DNS autorizado de la UAH (la IPuah cuyo nombre es AuthUAH.es). Además, tanto el DNS local como el DNS raíz prestan el servicio de recursividad. Represente el diagrama de intercambio de mensajes de DNS</p>
 
 <div id="tableContainer" style="position: relative; display: inline-block;">
 
 
 <form action="check.php" method="POST">
-	<input type="hidden" id="ExerciseID" name="ExerciseID" value="1">
+	<input type="hidden" id="ExerciseID" name="ExerciseID" value="3">
   <table id="formTable">
 
 	<tr>
