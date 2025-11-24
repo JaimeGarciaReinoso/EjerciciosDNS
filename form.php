@@ -143,45 +143,45 @@
 	for ($x=0;$x<=14;$x++) {
 			echo "
 	<tr>
-		<td id=\"".($x*7+1)."\"><select name=\"c".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*7+2)."\">Local</option><option value=\"".(($x+1)*7+3)."\">Root</option><option value=\"".(($x+1)*7+4)."\">TLD</option><option value=\"".(($x+1)*7+5)."\">Auth.</option></td>
-		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*7+1)."\"><select name=\"c".($x+1)."-dest\"><option value=\"0\"></option><option value=\"".(($x+1)*7+2)."\">Local</option><option value=\"".(($x+1)*7+3)."\">Root</option><option value=\"".(($x+1)*7+4)."\">TLD</option><option value=\"".(($x+1)*7+5)."\">Auth.</option></td>
+		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-qr\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Qname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Qtype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Aname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Atype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"client\" name=\"c".($x+1)."-Aaddr\" size=\"5\" value=\"\"></td>
 		<td class=\"ticktemplate\"></td>
-		<td id=\"".($x*7+2)."\"><select name=\"l".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*7+1)."\">Client</option><option value=\"".(($x+1)*7+3)."\">Root</option><option value=\"".(($x+1)*7+4)."\">TLD</option><option value=\"".(($x+1)*7+5)."\">Auth.</option></td>
-		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*7+2)."\"><select name=\"l".($x+1)."-dest\"><option value=\"0\"></option><option value=\"".(($x+1)*7+1)."\">Client</option><option value=\"".(($x+1)*7+3)."\">Root</option><option value=\"".(($x+1)*7+4)."\">TLD</option><option value=\"".(($x+1)*7+5)."\">Auth.</option></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-qr\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Qname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Qtype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Aname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Atype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"local\" name=\"l".($x+1)."-Aaddr\" size=\"5\" value=\"\"></td>
 		<td class=\"ticktemplate\"></td>
-		<td id=\"".($x*7+3)."\"><select name=\"r".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*7+1)."\">Client</option><option value=\"".(($x+1)*7+2)."\">Local</option><option value=\"".(($x+1)*7+4)."\">TLD</option><option value=\"".(($x+1)*7+5)."\">Auth.</option></td>
-		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*7+3)."\"><select name=\"r".($x+1)."-dest\"><option value=\"0\"></option><option value=\"".(($x+1)*7+1)."\">Client</option><option value=\"".(($x+1)*7+2)."\">Local</option><option value=\"".(($x+1)*7+4)."\">TLD</option><option value=\"".(($x+1)*7+5)."\">Auth.</option></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-qr\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Qname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Qtype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Aname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Atype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"root\" name=\"r".($x+1)."-Aaddr\" size=\"5\" value=\"\"></td>
 		<td class=\"ticktemplate\"></td>
-		<td id=\"".($x*7+4)."\"><select name=\"t".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*7+1)."\">Client</option><option value=\"".(($x+1)*7+2)."\">Local</option><option value=\"".(($x+1)*7+3)."\">Root</option><option value=\"".(($x+1)*7+5)."\">Auth.</option></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*7+4)."\"><select name=\"t".($x+1)."-dest\"><option value=\"0\"></option><option value=\"".(($x+1)*7+1)."\">Client</option><option value=\"".(($x+1)*7+2)."\">Local</option><option value=\"".(($x+1)*7+3)."\">Root</option><option value=\"".(($x+1)*7+5)."\">Auth.</option></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-qr\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Qname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Qtype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Aname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Atype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"tld\" name=\"t".($x+1)."-Aaddr\" size=\"5\" value=\"\"></td>
 		<td class=\"ticktemplate\"></td>
-		<td id=\"".($x*7+5)."\"><select name=\"a".($x+1)."-dest\"><option value=\"0\">NULL</option><option value=\"".(($x+1)*7+1)."\">Client</option><option value=\"".(($x+1)*7+2)."\">Local</option><option value=\"".(($x+1)*7+3)."\">Root</option><option value=\"".(($x+1)*7+4)."\">TLD</option></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-qr\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Qname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Qtype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Aname\" size=\"5\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Atype\" size=\"1\" value=\"NULL\"></td>
-		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Aaddr\" size=\"5\" value=\"NULL\"></td>
+		<td id=\"".($x*7+5)."\"><select name=\"a".($x+1)."-dest\"><option value=\"0\"></option><option value=\"".(($x+1)*7+1)."\">Client</option><option value=\"".(($x+1)*7+2)."\">Local</option><option value=\"".(($x+1)*7+3)."\">Root</option><option value=\"".(($x+1)*7+4)."\">TLD</option></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-qr\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Qname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Qtype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Aname\" size=\"5\" value=\"\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Atype\" size=\"1\" value=\"\"></td>
+		<td><input type=\"text\" side=\"auth\" name=\"a".($x+1)."-Aaddr\" size=\"5\" value=\"\"></td>
 	</tr>
 ";
 																	}

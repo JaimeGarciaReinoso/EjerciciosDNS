@@ -81,12 +81,13 @@ $postArray = array();
 $auxArray = array();
 foreach ($_POST as $key => $val) {
 	if ($exerciseIDAux > 1) { //first two fields are hidden
-		if ($aux == 0) {
+		if ($aux == 0) { //processing destination
 			if ($val == 0) $auxArray[] = "NULL";
 			else $auxArray[] = $val % $itemsMessage;
 		}
 		else 
-			$auxArray[] = $val;
+			if ($val == "") $auxArray[] = "NULL";
+			else $auxArray[] = $val;
 		$aux = $aux + 1;
 		if ($aux == $itemsMessage) { 
 			$postArray[] = $auxArray;
@@ -227,8 +228,13 @@ while ($ticAux < 15) {
 				$errors++;
 			} else
 				echo "<td><input disabled id=\"green\" type=\"text\" side=\"client\" size=\"5\" value=\""; 
-			
-			echo $postArray[$ticAux*$devices+$dev][$i] . "\"></td>\n";
+
+			if ($postArray[$ticAux*$devices+$dev][$i] == "NULL") {
+				$value = "";
+			} else {
+				$value = htmlspecialchars($postArray[$ticAux*$devices+$dev][$i], ENT_QUOTES, 'UTF-8');
+			}
+			echo $value . "\"></td>\n";
 //echo "Mismatch in tic = $ticAux, sender = $senderAux, field= $i | Student: " .  $postArray[2*$ticAux+$senderAux][$i] . " vs  Answer: " . $arraySeg[2*$ticAux+$senderAux][$i] . "<br>";
 	}
 		echo "<td></td>";
