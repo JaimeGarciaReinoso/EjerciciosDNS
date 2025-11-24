@@ -9,7 +9,7 @@
 
 //const
 $devices = 5;
-$itemsMessage = 10;
+$itemsMessage = 7;
 
 require __DIR__ . '/credencialesDB.env';
 
@@ -39,14 +39,14 @@ while ($row = $ex->fetch()){
 	//fill with NULLs in case segments do not exist in answers
 	for ($senderAux=1; $senderAux <= $devices; $senderAux++) {
 		if (($row->Sender != $senderAux)) {
-			$arraySeg[] = array("NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL");
+			$arraySeg[] = array("NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL");
 		} else {
 			if (empty($row->Aname)) {
 				$row->Aname = "NULL";
 				$row->Atype = "NULL";
 				$row->Aaddr = "NULL";
 			}
-			$arraySeg[] = array($row->Dest,$row->QR,$row->RD,$row->RA,$row->AA,$row->Qname,$row->Qtype,$row->Aname,$row->Atype,$row->Aaddr);
+			$arraySeg[] = array($row->Dest,$row->QR,$row->Qname,$row->Qtype,$row->Aname,$row->Atype,$row->Aaddr);
 		}
 	}
 	$tic = $tic+1;
@@ -54,7 +54,7 @@ while ($row = $ex->fetch()){
 
 //fill with NULL 'til tic 15, which is what we have in the forms
 while ($tic < 16) {
-	$arraySeg[] = array("NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL");
+	$arraySeg[] = array("NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL");
 	$sender = ($sender + 1) % $devices + 1;
 	if ($sender == 1) $tic = $tic + 1;
 }
@@ -80,10 +80,10 @@ $exerciseIDAux = 0;
 $postArray = array();
 $auxArray = array();
 foreach ($_POST as $key => $val) {
-	if ($exerciseIDAux > 0) {
+	if ($exerciseIDAux > 1) { //first two fields are hidden
 		if ($aux == 0) {
 			if ($val == 0) $auxArray[] = "NULL";
-			else $auxArray[] = $val % 10;
+			else $auxArray[] = $val % $itemsMessage;
 		}
 		else 
 			$auxArray[] = $val;
@@ -94,7 +94,7 @@ foreach ($_POST as $key => $val) {
 			$aux = 0;
 		}
 	}
-	else $exerciseIDAux = 1;	
+	else $exerciseIDAux = $exerciseIDAux + 1;	
 }
 
 //echo "Student's answer +++++++++++++++++ <br>";
@@ -121,64 +121,61 @@ echo "
   <table id=\"formTable\">
 
 	<tr>
-		<th class=\"top-header\" colspan=\"10\">Client</th>
+		<th class=\"top-header\" colspan=\"7\">Client</th>
 		<td></td>
-		<th class=\"top-header\" colspan=\"10\">Local DNS</th>
+		<th class=\"top-header\" colspan=\"7\">Local DNS</th>
 		<td></td>
-		<th class=\"top-header\" colspan=\"10\">Root DNS</th>
+		<th class=\"top-header\" colspan=\"7\">Root DNS</th>
 		<td></td>
-		<th class=\"top-header\" colspan=\"10\">TLD DNS</th>
+		<th class=\"top-header\" colspan=\"7\">TLD DNS</th>
 		<td></td>
-		<th class=\"top-header\" colspan=\"10\">Auth. DNS</th>
+		<th class=\"top-header\" colspan=\"7\">Auth. DNS</th>
 	</tr>
 	<tr>
 		<th class=\"ip-dns-header\" colspan=\"1\">IP</th>
-		<th  class=\"ip-dns-header\" colspan=\"9\">DNS</th>
+		<th  class=\"ip-dns-header\" colspan=\"6\">DNS</th>
 		<td></td>
 		<th  class=\"ip-dns-header\" colspan=\"1\">IP</th>
-		<th  class=\"ip-dns-header\" colspan=\"9\">DNS</th>
+		<th  class=\"ip-dns-header\" colspan=\"6\">DNS</th>
 		<td></td>
 		<th  class=\"ip-dns-header\" colspan=\"1\">IP</th>
-		<th  class=\"ip-dns-header\" colspan=\"9\">DNS</th>
+		<th  class=\"ip-dns-header\" colspan=\"6\">DNS</th>
 		<td></td>
 		<th  class=\"ip-dns-header\" colspan=\"1\">IP</th>
-		<th  class=\"ip-dns-header\" colspan=\"9\">DNS</th>
+		<th  class=\"ip-dns-header\" colspan=\"6\">DNS</th>
 		<td></td>
 		<th  class=\"ip-dns-header\" colspan=\"1\">IP</th>
-		<th  class=\"ip-dns-header\" colspan=\"9\">DNS</th>
+		<th  class=\"ip-dns-header\" colspan=\"6\">DNS</th>
 		<td></td>
 	</tr>
 	<tr>
 		<th class=\"content-header\" colspan=\"1\">IPdest</th>
-		<th class=\"content-header\" colspan=\"4\">Flags</th>
+		<th class=\"content-header\" colspan=\"1\">Flags</th>
 		<th class=\"content-header\" colspan=\"2\">Queries</th>
 		<th class=\"content-header\"  colspan=\"3\">Answers</th>
 		<td></td>
 		<th class=\"content-header\"  colspan=\"1\">IPdest</th>
-		<th class=\"content-header\"  colspan=\"4\">Flags</th>
+		<th class=\"content-header\"  colspan=\"1\">Flags</th>
 		<th class=\"content-header\"  colspan=\"2\">Queries</th>
 		<th class=\"content-header\" colspan=\"3\">Answers</th>
 		<td></td>
 		<th class=\"content-header\"  colspan=\"1\">IPdest</th>
-		<th class=\"content-header\"  colspan=\"4\">Flags</th>
+		<th class=\"content-header\"  colspan=\"1\">Flags</th>
 		<th class=\"content-header\" colspan=\"2\">Queries</th>
 		<th class=\"content-header\" colspan=\"3\">Answers</th>
 		<td></td>
 		<th class=\"content-header\" colspan=\"1\">IPdest</th>
-		<th class=\"content-header\" colspan=\"4\">Flags</th>
+		<th class=\"content-header\" colspan=\"1\">Flags</th>
 		<th class=\"content-header\" colspan=\"2\">Queries</th>
 		<th class=\"content-header\" colspan=\"3\">Answers</th>
 		<td></td>
 		<th class=\"content-header\" colspan=\"1\">IPdest</th>
-		<th class=\"content-header\" colspan=\"4\">Flags</th>
+		<th class=\"content-header\" colspan=\"1\">Flags</th>
 		<th class=\"content-header\" colspan=\"2\">Queries</th>
 		<th class=\"content-header\" colspan=\"3\">Answers</th>
 	<tr>
 		<th class=\"bottom-header\">IPdest</th>
 		<th class=\"bottom-header\">QR</th>
-		<th class=\"bottom-header\">RD</th>
-		<th class=\"bottom-header\">RA</th>
-		<th class=\"bottom-header\">AA</th>
 		<th class=\"bottom-header\">Name</th>
 		<th class=\"bottom-header\">Type</th>
 		<th class=\"bottom-header\">Name</th>
@@ -187,9 +184,6 @@ echo "
 		<td></td>
 		<th class=\"bottom-header\">IPdest</th>
 		<th class=\"bottom-header\">QR</th>
-		<th class=\"bottom-header\">RD</th>
-		<th class=\"bottom-header\">RA</th>
-		<th class=\"bottom-header\">AA</th>
 		<th class=\"bottom-header\">Name</th>
 		<th class=\"bottom-header\">Type</th>
 		<th class=\"bottom-header\">Name</th>
@@ -198,9 +192,6 @@ echo "
 		<td></td>
 		<th class=\"bottom-header\">IPdest</th>
 		<th class=\"bottom-header\">QR</th>
-		<th class=\"bottom-header\">RD</th>
-		<th class=\"bottom-header\">RA</th>
-		<th class=\"bottom-header\">AA</th>
 		<th class=\"bottom-header\">Name</th>
 		<th class=\"bottom-header\">Type</th>
 		<th class=\"bottom-header\">Name</th>
@@ -209,9 +200,6 @@ echo "
 		<td></td>
 		<th class=\"bottom-header\">IPdest</th>
 		<th class=\"bottom-header\">QR</th>
-		<th class=\"bottom-header\">RD</th>
-		<th class=\"bottom-header\">RA</th>
-		<th class=\"bottom-header\">AA</th>
 		<th class=\"bottom-header\">Name</th>
 		<th class=\"bottom-header\">Type</th>
 		<th class=\"bottom-header\">Name</th>
@@ -220,9 +208,6 @@ echo "
 		<td></td>
 		<th class=\"bottom-header\">IPdest</th>
 		<th class=\"bottom-header\">QR</th>
-		<th class=\"bottom-header\">RD</th>
-		<th class=\"bottom-header\">RA</th>
-		<th class=\"bottom-header\">AA</th>
 		<th class=\"bottom-header\">Name</th>
 		<th class=\"bottom-header\">Type</th>
 		<th class=\"bottom-header\">Name</th>
